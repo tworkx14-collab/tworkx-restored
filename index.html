@@ -329,7 +329,77 @@ footer {
 
   </div>
 </section>
+section id="gallery" style="padding:70px 20px; background:#111; color:white;">
+  <div style="max-width:1200px; margin:auto; text-align:center;">
+    
+    <div style="margin-bottom:35px;">
+      <h2 style="font-size:36px; margin-bottom:10px;">
+        Our <span style="color:#d4af37;">Work</span>
+      </h2>
+      <p style="font-size:18px; color:#ccc;">
+        A look at some of our restoration, construction and contracting projects.
+      </p>
+    </div>
 
+    <div id="tworkx-gallery"
+         style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;">
+      <p style="color:#ccc;">Loading project photos...</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+async function loadTworkxGallery() {
+  const gallery = document.getElementById("tworkx-gallery");
+
+  try {
+    const response = await fetch(
+      "https://api.github.com/repos/tworkx14-collab/tworkx-restored/contents/"
+    );
+
+    const files = await response.json();
+
+    gallery.innerHTML = "";
+
+    files
+      .filter(file =>
+        file.type === "file" &&
+        /\.(jpg|jpeg|png|webp)$/i.test(file.name)
+      )
+      .forEach(file => {
+        const img = document.createElement("img");
+
+        img.src = file.download_url;
+        img.alt = "Tworkx Restored project";
+        img.loading = "lazy";
+
+        img.style.width = "100%";
+        img.style.height = "250px";
+        img.style.objectFit = "cover";
+        img.style.borderRadius = "10px";
+        img.style.cursor = "pointer";
+
+        img.onclick = function() {
+          window.open(file.download_url, "_blank");
+        };
+
+        gallery.appendChild(img);
+      });
+
+    if (!gallery.children.length) {
+      gallery.innerHTML =
+        "<p style='color:#ccc;'>Project photos will appear here soon.</p>";
+    }
+
+  } catch (error) {
+    gallery.innerHTML =
+      "<p style='color:#ccc;'>Photos are temporarily unavailable.</p>";
+  }
+}
+
+loadTworkxGallery();
+</script>
 <section id="about" class="about">
   <div class="about-content">
 
