@@ -4,454 +4,242 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TworkX Restored | We Do It All</title>
-
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#080808;color:white;line-height:1.6}
+header{background:linear-gradient(135deg,#050505,#151515);border-bottom:3px solid #8cff00;padding:18px 6%;position:sticky;top:0;z-index:1000}
+.nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center}
+.logo-text{font-size:28px;font-weight:900;letter-spacing:2px}.logo-text span{color:#8cff00}
+nav a{color:white;text-decoration:none;margin-left:25px;font-weight:bold}nav a:hover{color:#8cff00}
+.hero{min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 20px;background:radial-gradient(circle at center,#252525 0%,#080808 65%)}
+.hero-content{max-width:950px}.main-logo{width:min(420px,85vw);height:auto;display:block;margin:0 auto 25px}
+.hero h1{font-size:clamp(55px,10vw,110px);line-height:.9;font-weight:900;letter-spacing:4px;text-transform:uppercase;text-shadow:0 0 25px rgba(140,255,0,.35)}
+.hero h1 span{color:#8cff00}.hero h2{margin-top:20px;font-size:clamp(28px,5vw,55px);color:#b8b8b8;text-transform:uppercase}
+.tagline{margin:25px 0;font-size:30px;font-weight:900;color:#8cff00;letter-spacing:3px}.hero p{max-width:750px;margin:auto;font-size:19px;color:#ddd}
+.button{display:inline-block;margin-top:30px;padding:15px 30px;background:#8cff00;color:#050505;font-weight:900;text-decoration:none;border-radius:6px;text-transform:uppercase}
+section{padding:80px 6%}.section-title{text-align:center;margin-bottom:45px}.section-title h2{font-size:42px;text-transform:uppercase}.section-title span{color:#8cff00}
+.services{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px}
+.card{background:#151515;border:1px solid #333;border-top:4px solid #8cff00;padding:30px;border-radius:8px;transition:.3s}
+.card:hover{transform:translateY(-7px);box-shadow:0 0 25px rgba(140,255,0,.15)}.card h3{color:#8cff00;font-size:25px;margin-bottom:12px}.card p{color:#ccc}
+.about{background:#111}.about-content{max-width:1000px;margin:auto;text-align:center}.about-content p{color:#ccc;font-size:18px;margin-top:15px}
+.contact{text-align:center;background:linear-gradient(135deg,#111,#050505)}.contact-box{max-width:750px;margin:auto;background:#151515;padding:40px;border-radius:10px;border:1px solid #333}
+.contact-box p{margin:12px 0;font-size:18px}.contact-box strong{color:#8cff00}
+footer{text-align:center;padding:30px;background:#050505;border-top:1px solid #222;color:#888}
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #080808;
-  color: white;
-  line-height: 1.6;
-}
-
-header {
-  background: linear-gradient(135deg, #050505, #151515);
-  border-bottom: 3px solid #8cff00;
-  padding: 18px 6%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo-text {
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-
-.logo-text span {
-  color: #8cff00;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 25px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #8cff00;
-}
-
-.hero {
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 70px 20px;
-  background:
-    radial-gradient(circle at center, #252525 0%, #080808 65%);
-}
-
-.hero-content {
-  max-width: 950px;
-}
-  .main-logo {
-  width: min(420px, 85vw);
-  height: auto;
-  display: block;
-  margin: 0 auto 25px;
-}
-
-.hero h1 {
-  font-size: clamp(55px, 10vw, 110px);
-  line-height: .9;
-  font-weight: 900;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  text-shadow: 0 0 25px rgba(140,255,0,.35);
-}
-
-.hero h1 span {
-  color: #8cff00;
-}
-
-.hero h2 {
-  margin-top: 20px;
-  font-size: clamp(28px, 5vw, 55px);
-  color: #b8b8b8;
-  text-transform: uppercase;
-}
-
-.tagline {
-  margin: 25px 0;
-  font-size: 30px;
-  font-weight: 900;
-  color: #8cff00;
-  letter-spacing: 3px;
-}
-
-.hero p {
-  max-width: 750px;
-  margin: auto;
-  font-size: 19px;
-  color: #ddd;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 15px 30px;
-  background: #8cff00;
-  color: #050505;
-  font-weight: 900;
-  text-decoration: none;
-  border-radius: 6px;
-  text-transform: uppercase;
-}
-
-section {
-  padding: 80px 6%;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.section-title h2 {
-  font-size: 42px;
-  text-transform: uppercase;
-}
-
-.section-title span {
-  color: #8cff00;
-}
-
-.services {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
-}
-
-.card {
-  background: #151515;
-  border: 1px solid #333;
-  border-top: 4px solid #8cff00;
-  padding: 30px;
-  border-radius: 8px;
-  transition: .3s;
-}
-
-.card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 0 25px rgba(140,255,0,.15);
-}
-
-.card h3 {
-  color: #8cff00;
-  font-size: 25px;
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: #ccc;
-}
-
-.about {
-  background: #111;
-}
-
-.about-content {
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-}
-
-.about-content p {
-  color: #ccc;
-  font-size: 18px;
-  margin-top: 15px;
-}
-
-.contact {
-  text-align: center;
-  background: linear-gradient(135deg, #111, #050505);
-}
-
-.contact-box {
-  max-width: 750px;
-  margin: auto;
-  background: #151515;
-  padding: 40px;
-  border-radius: 10px;
-  border: 1px solid #333;
-}
-
-.contact-box p {
-  margin: 12px 0;
-  font-size: 18px;
-}
-
-.contact-box strong {
-  color: #8cff00;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #050505;
-  border-top: 1px solid #222;
-  color: #888;
-}
-
-@media(max-width:700px) {
-  nav {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 55px;
-  }
-
-  .tagline {
-    font-size: 23px;
-  }
-}
+.gallery-section{padding:80px 6%;background:#111}
+.gallery-wrap{max-width:1250px;margin:auto;text-align:center}
+.gallery-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:35px}
+.gallery-btn{border:1px solid #444;background:#1b1b1b;color:white;padding:11px 18px;border-radius:6px;font-weight:bold;cursor:pointer}
+.gallery-btn:hover,.gallery-btn.active{background:#8cff00;color:#050505;border-color:#8cff00}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.gallery-item{background:#151515;border:1px solid #333;border-radius:9px;overflow:hidden;cursor:pointer}
+.gallery-item img{width:100%;height:230px;object-fit:cover;display:block;transition:.25s}
+.gallery-item:hover img{transform:scale(1.04)}
+.gallery-empty{color:#ccc;padding:30px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:2000;align-items:center;justify-content:center;padding:25px}
+.modal.show{display:flex}.modal img{max-width:92vw;max-height:85vh;object-fit:contain;border-radius:8px}
+.modal-close,.modal-prev,.modal-next{position:absolute;border:0;background:#8cff00;color:#050505;font-size:28px;font-weight:bold;width:48px;height:48px;border-radius:50%;cursor:pointer}
+.modal-close{top:20px;right:20px}.modal-prev{left:20px;top:50%;transform:translateY(-50%)}.modal-next{right:20px;top:50%;transform:translateY(-50%)}
+.modal-caption{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#ddd;font-weight:bold}
+@media(max-width:700px){nav{display:none}.hero h1{font-size:55px}.tagline{font-size:23px}.modal-prev{left:8px}.modal-next{right:8px}}
 </style>
 </head>
-
 <body>
 
-<header>
-  <div class="nav">
-    <div class="logo-text">Twork<span>X</span> Restored</div>
+<header><div class="nav">
+<div class="logo-text">Twork<span>X</span> Restored</div>
+<nav><a href="#services">Services</a><a href="#gallery">Our Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</div></header>
 
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<section class="hero"><div class="hero-content">
+<img src="https://raw.githubusercontent.com/tworkx14-collab/tworkx-restored/main/ChatGPT%20Image%20Sep%2027,%202026,%2002_33_05%20PM.png" alt="TworkX Restored Logo" class="main-logo">
+<h1>Twork<span>X</span></h1><h2>Restored</h2><div class="tagline">WE DO IT ALL</div>
+<p>Professional restoration, construction, excavation, landscaping and roofing services serving Williamsport, Pennsylvania and surrounding areas.</p>
+<a class="button" href="#contact">Request an Estimate</a>
+</div></section>
 
-<section class="hero">
-  <div class="hero-content">
-    <img
-  src="https://raw.githubusercontent.com/tworkx14-collab/tworkx-restored/main/ChatGPT%20Image%20Sep%2027,%202026,%2002_33_05%20PM.png"
-  alt="TworkX Restored Logo"
-  class="main-logo"
->
-    <h1>Twork<span>X</span></h1>
-    <h2>Restored</h2>
+<section id="services"><div class="section-title"><h2>Our <span>Services</span></h2></div><div class="services">
+<div class="card"><h3>Construction</h3><p>Professional construction and remodeling services for residential and commercial properties.</p></div>
+<div class="card"><h3>Restoration</h3><p>Restore, repair and improve your property with dependable workmanship and attention to detail.</p></div>
+<div class="card"><h3>Excavation</h3><p>Excavation, grading, site preparation and property improvement work.</p></div>
+<div class="card"><h3>Landscaping</h3><p>Property cleanup, landscaping, outdoor improvements and general property maintenance.</p></div>
+<div class="card"><h3>Roofing</h3><p>Roofing repairs, maintenance and improvement projects for your property.</p></div>
+<div class="card"><h3>General Contracting</h3><p>From smaller repairs to larger projects, TworkX Restored is ready to help.</p></div>
+</div></section>
 
-    <div class="tagline">WE DO IT ALL</div>
+<section id="gallery" class="gallery-section"><div class="gallery-wrap">
+<div class="section-title"><h2>Our <span>Work</span></h2><p style="color:#ccc;font-size:18px;margin-top:10px">Browse our projects by category.</p></div>
+<div id="gallery-buttons" class="gallery-buttons"></div>
+<div id="tworkx-gallery" class="gallery-grid"></div>
+</div></section>
 
-    <p>
-      Professional restoration, construction, excavation,
-      landscaping and roofing services serving Williamsport,
-      Pennsylvania and surrounding areas.
-    </p>
+<div id="photoModal" class="modal">
+<button class="modal-close" aria-label="Close">×</button>
+<button class="modal-prev" aria-label="Previous">‹</button>
+<img id="modalImage" src="" alt="TworkX Restored project">
+<button class="modal-next" aria-label="Next">›</button>
+<div id="modalCaption" class="modal-caption"></div>
+</div>
 
-    <a class="button" href="#contact">Request an Estimate</a>
-  </div>
-</section>
+<section id="about" class="about"><div class="about-content"><div class="section-title"><h2>Why <span>TworkX Restored?</span></h2></div>
+<p>We believe your property deserves quality workmanship, dependable service and attention to detail.</p>
+<p>From restoration and repairs to construction, excavation, landscaping and roofing, we bring multiple services together under one name.</p>
+<p><strong>One company. Multiple services. We do it all.</strong></p></div></section>
 
-<section id="services">
-  <div class="section-title">
-    <h2>Our <span>Services</span></h2>
-  </div>
+<section id="contact" class="contact"><div class="section-title"><h2>Get A <span>Free Estimate</span></h2></div><div class="contact-box">
+<p><strong>TworkX Restored</strong></p><p>Williamsport, Pennsylvania &amp; Surrounding Areas</p><p>Serving customers within approximately 50 miles.</p>
+<p>Ready to discuss your project? Contact us today for an estimate.</p>
+<a class="button" href="mailto:tworkxrestored@gmail.com">Contact TworkX</a>
+</div></section>
 
-  <div class="services">
-
-    <div class="card">
-      <h3>Construction</h3>
-      <p>
-        Professional construction and remodeling services
-        for residential and commercial properties.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Restoration</h3>
-      <p>
-        Restore, repair and improve your property with
-        dependable workmanship and attention to detail.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Excavation</h3>
-      <p>
-        Excavation, grading, site preparation and
-        property improvement work.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Landscaping</h3>
-      <p>
-        Property cleanup, landscaping, outdoor improvements
-        and general property maintenance.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Roofing</h3>
-      <p>
-        Roofing repairs, maintenance and improvement
-        projects for your property.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>General Contracting</h3>
-      <p>
-        From smaller repairs to larger projects,
-        TworkX Restored is ready to help.
-      </p>
-    </div>
-
-  </div>
-</section>
-section id="gallery" style="padding:70px 20px; background:#111; color:white;">
-  <div style="max-width:1200px; margin:auto; text-align:center;">
-    
-    <div style="margin-bottom:35px;">
-      <h2 style="font-size:36px; margin-bottom:10px;">
-        Our <span style="color:#d4af37;">Work</span>
-      </h2>
-      <p style="font-size:18px; color:#ccc;">
-        A look at some of our restoration, construction and contracting projects.
-      </p>
-    </div>
-
-    <div id="tworkx-gallery"
-         style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;">
-      <p style="color:#ccc;">Loading project photos...</p>
-    </div>
-
-  </div>
-</section>
+<footer>© 2026 TworkX Restored — Professional Restoration, Construction &amp; Contracting Services</footer>
 
 <script>
-async function loadTworkxGallery() {
-  const gallery = document.getElementById("tworkx-gallery");
+const categories = {
+    "Sheds & Outbuildings": [
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_213.jpg",
+      "370.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_217.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_224.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_219.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_216.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_220.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_221(1).jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_223.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_225(1).jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_10.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_220(1).jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_222.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_218.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_221.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_168.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_229.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_225.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_167.jpg",
+      "369.jpg"
+    ],
+    "Decks & Porches": [
+      "372.jpg",
+      "371.jpg",
+      "381.jpg",
+      "380.jpg",
+      "383.jpg",
+      "382.jpg"
+    ],
+    "Roofing & Gutters": [
+      "769.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_153.jpg",
+      "770.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_152.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_79.jpg"
+    ],
+    "Siding, Windows & Doors": [
+      "384.jpg",
+      "378.jpg",
+      "367.jpg",
+      "379.jpg",
+      "376.jpg",
+      "368.jpg",
+      "374.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_12.jpg",
+      "385.jpg",
+      "377.jpg",
+      "373.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_13.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_15.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_14.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_11.jpg",
+      "386.jpg",
+      "375.jpg"
+    ],
+    "Concrete, Steps & Driveways": [
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_201.jpg",
+      "361.jpg",
+      "360.jpg",
+      "577.jpg",
+      "532.jpg"
+    ],
+    "Sitework, Landscaping & Excavation": [
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_145.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_146.jpg",
+      "722.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_147.jpg",
+      "726.jpg",
+      "506.jpg"
+    ],
+    "Equipment & Vehicles": [
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_163.jpg",
+      "682.jpg",
+      "397.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_162.jpg",
+      "723.jpg",
+      "728.jpg",
+      "0878ab14-ad24-48ff-9c18-0e1d20bc0876-1_all_161.jpg"
+    ]
+};
 
-  try {
-    const response = await fetch(
-      "https://api.github.com/repos/tworkx14-collab/tworkx-restored/contents/"
-    );
+let currentPhotos = [];
+let currentIndex = 0;
 
-    const files = await response.json();
+const gallery = document.getElementById("tworkx-gallery");
+const buttons = document.getElementById("gallery-buttons");
+const modal = document.getElementById("photoModal");
+const modalImage = document.getElementById("modalImage");
+const modalCaption = document.getElementById("modalCaption");
 
-    gallery.innerHTML = "";
-
-    files
-      .filter(file =>
-        file.type === "file" &&
-        /\.(jpg|jpeg|png|webp)$/i.test(file.name)
-      )
-      .forEach(file => {
-        const img = document.createElement("img");
-
-        img.src = file.download_url;
-        img.alt = "Tworkx Restored project";
-        img.loading = "lazy";
-
-        img.style.width = "100%";
-        img.style.height = "250px";
-        img.style.objectFit = "cover";
-        img.style.borderRadius = "10px";
-        img.style.cursor = "pointer";
-
-        img.onclick = function() {
-          window.open(file.download_url, "_blank");
-        };
-
-        gallery.appendChild(img);
-      });
-
-    if (!gallery.children.length) {
-      gallery.innerHTML =
-        "<p style='color:#ccc;'>Project photos will appear here soon.</p>";
-    }
-
-  } catch (error) {
-    gallery.innerHTML =
-      "<p style='color:#ccc;'>Photos are temporarily unavailable.</p>";
-  }
+function showCategory(category) {
+  currentPhotos = categories[category] || [];
+  gallery.innerHTML = "";
+  currentPhotos.forEach((file, index) => {
+    const item = document.createElement("div");
+    item.className = "gallery-item";
+    const img = document.createElement("img");
+    img.src = file;
+    img.alt = "TworkX Restored " + category;
+    img.loading = "lazy";
+    img.onclick = () => openPhoto(index);
+    item.appendChild(img);
+    gallery.appendChild(item);
+  });
+  if (!currentPhotos.length) gallery.innerHTML = '<p class="gallery-empty">Photos will appear here soon.</p>';
+  document.querySelectorAll(".gallery-btn").forEach(btn => btn.classList.toggle("active", btn.dataset.category === category));
 }
 
-loadTworkxGallery();
+function openPhoto(index) {
+  currentIndex = index;
+  modalImage.src = currentPhotos[currentIndex];
+  modalCaption.textContent = "TworkX Restored • " + currentIndex + 1 + " of " + currentPhotos.length;
+  modal.classList.add("show");
+}
+function closePhoto(){modal.classList.remove("show")}
+function nextPhoto(){currentIndex=(currentIndex+1)%currentPhotos.length;openPhoto(currentIndex)}
+function prevPhoto(){currentIndex=(currentIndex-1+currentPhotos.length)%currentPhotos.length;openPhoto(currentIndex)}
+
+const allPhotos = Object.values(categories).flat();
+categories["All Projects"] = allPhotos;
+
+Object.keys(categories).forEach(category => {
+  const btn = document.createElement("button");
+  btn.className = "gallery-btn";
+  btn.textContent = category;
+  btn.dataset.category = category;
+  btn.onclick = () => showCategory(category);
+  buttons.appendChild(btn);
+});
+
+document.querySelector(".modal-close").onclick = closePhoto;
+document.querySelector(".modal-next").onclick = nextPhoto;
+document.querySelector(".modal-prev").onclick = prevPhoto;
+modal.onclick = e => { if(e.target === modal) closePhoto(); };
+document.addEventListener("keydown", e => {
+  if(!modal.classList.contains("show")) return;
+  if(e.key === "Escape") closePhoto();
+  if(e.key === "ArrowRight") nextPhoto();
+  if(e.key === "ArrowLeft") prevPhoto();
+});
+
+showCategory("All Projects");
 </script>
-<section id="about" class="about">
-  <div class="about-content">
-
-    <div class="section-title">
-      <h2>Why <span>TworkX Restored?</span></h2>
-    </div>
-
-    <p>
-      We believe your property deserves quality workmanship,
-      dependable service and attention to detail.
-    </p>
-
-    <p>
-      From restoration and repairs to construction,
-      excavation, landscaping and roofing,
-      we bring multiple services together under one name.
-    </p>
-
-    <p>
-      <strong>One company. Multiple services. We do it all.</strong>
-    </p>
-
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="section-title">
-    <h2>Get A <span>Free Estimate</span></h2>
-  </div>
-
-  <div class="contact-box">
-    <p><strong>TworkX Restored</strong></p>
-    <p>Williamsport, Pennsylvania & Surrounding Areas</p>
-    <p>Serving customers within approximately 50 miles.</p>
-
-    <p>
-      Ready to discuss your project?
-      Contact us today for an estimate.
-    </p>
-
-    <a class="button" href="mailto:tworkxrestored@gmail.com">
-      Contact TworkX
-    </a>
-  </div>
-</section>
-
-<footer>
-  © 2026 TworkX Restored — Professional Restoration,
-  Construction & Contracting Services
-</footer>
-
 </body>
 </html>
+
